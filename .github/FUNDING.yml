@@ -1,0 +1,46 @@
+/modules
+├── .
+├── .
+|
+├── $MODID                  <--- The folder is named with the ID of the module
+│   │
+│   │      *** Module Identity ***
+│   │
+│   ├── module.prop         <--- This file stores the metadata of the module
+│   │
+│   │      *** Main Contents ***
+│   │
+│   ├── system              <--- This folder will be mounted if skip_mount does not exists
+│   │   ├── ...
+│   │   ├── ...
+│   │   └── ...
+│   │
+│   │      *** Status Flags ***
+│   │
+│   ├── skip_mount          <--- If exists, Magisk will NOT mount your system folder
+│   ├── disable             <--- If exists, the module will be disabled
+│   ├── remove              <--- If exists, the module will be removed next reboot
+│   │
+│   │      *** Optional Files ***
+│   │
+│   ├── post-fs-data.sh     <--- This script will be executed in post-fs-data
+│   ├── service.sh          <--- This script will be executed in late_start service
+|   ├── uninstall.sh        <--- This script will be executed when Magisk removes your module
+│   ├── system.prop         <--- Properties in this file will be loaded as system properties by resetprop
+│   ├── sepolicy.rule       <--- Additional custom sepolicy rules to be patched
+│   │
+│   │      *** Auto Generated, DO NOT MANUALLY CREATE OR MODIFY ***
+│   │
+│   ├── vendor              <--- A symlink to $MODID/system/vendor
+│   ├── product             <--- A symlink to $MODID/system/product
+│   │
+│   │      *** Any additional files / folders are allowed ***
+│   │
+│   ├── ...
+│   └── ...
+|
+├── another_module
+│   ├── .
+│   └── .
+├── .
+├── .
